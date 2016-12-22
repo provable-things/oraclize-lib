@@ -1,0 +1,18 @@
+{
+  "name": "oraclize-lib",
+  "version": "0.1.0",
+  "description": "A library to interface with a number of features that the Oraclize engine provides.",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oraclize Ltd.",
+  "license": "TBD",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "coinselect": "^3.1.10",
+    "json-stable-stringify": "^1.0.1",
+    "request": "^2.79.0",
+    "typeforce": "^1.9.4"
+  }
+}
