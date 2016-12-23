@@ -8,7 +8,7 @@ extraExports.OR = 'or';
 extraExports.helpers = {
     bitcoin: {
         Contract: require('./lib/helpers/bitcoin/contract'),
-        ConditionalEscrowAddress: require('./lib/helpers/bitcoin/ConditionalEscrowAddress')
+        ConditionalEscrowAddress: require('./lib/helpers/bitcoin/conditionalEscrowAddress')
     }
 };
 
