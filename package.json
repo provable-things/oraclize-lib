@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "assert": "^1.4.1",
+    "bitcoinjs-lib": "^2.3.0",
     "coinselect": "^3.1.10",
     "json-stable-stringify": "^1.0.1",
     "request": "^2.79.0",
