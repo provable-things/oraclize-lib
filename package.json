@@ -13,7 +13,9 @@
     "bitcoinjs-lib": "^2.3.0",
     "coinselect": "^3.1.10",
     "json-stable-stringify": "^1.0.1",
+    "lodash.get": "^4.4.2",
     "request": "^2.79.0",
+    "traverse": "^0.6.6",
     "typeforce": "^1.9.4"
   }
 }
