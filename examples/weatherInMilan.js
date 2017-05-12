@@ -88,25 +88,23 @@ var escrowAddress = new oraclize.helpers.bitcoin.ConditionalEscrowAddress({
 }, contractPrepareAndSubmit.bind(this));
 function contractPrepareAndSubmit() {
   console.log('Waiting for P2SH escrow to be funded');
-
+  console.log(escrowAddress.address)
   // Set up an interval checker to wait for escrow to be loaded
   var checker = setInterval(function () {
-    request('https://api.blockcypher.com/v1/btc/test3/txs/' + faucetTx, function (error, response, body) {
+    request('https://test-insight.bitpay.com/api/addr/' + escrowAddress.address + '/totalReceived', function (error, response, body) {
       try {
-        var parsed = JSON.parse(body);
-        if (typeof parsed.error !== 'undefined')
+        console.log('Total received in escrow: ' + body);
+        if (isNaN(body))
           throw new Error;
+
+        if (body <= 0)
+          return;
 
       } catch (e) {
         return;
       }
 
-      if (typeof faucetTx === 'undefined') {
-        console.log('Still waiting on faucet tx broadcast to occur.');
-        return;
-      } else {
-        clearInterval(checker);
-      }
+      clearInterval(checker);
 
       commitPrepareAndSubmit();
     });
